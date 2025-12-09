@@ -39,7 +39,7 @@ function deepClone(obj) {
   if (obj instanceof Object) {
     const clonedObject = {};
     for (const key in obj) {
-      if (obj.hasOwnProperty(key)) {
+      if (Object.prototype.hasOwnProperty.call(obj, key)) {
         clonedObject[key] = deepClone(obj[key]);
       }
     }
